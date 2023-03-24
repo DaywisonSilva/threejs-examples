@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Cube } from './pages'
-import Aircraft from './pages/Aircraft/Aircraft'
+import Aircraft from './pages/Aircraft'
 
 function App() {
   const [counter, setCounter] = useState(0)
