@@ -20,7 +20,7 @@ const Aircraft = () => {
 
     const clock = new THREE.Clock()
 
-    const stats = new Stats()
+    const stats = Stats()
     container?.current?.appendChild(stats.dom)
 
     const renderer = new THREE.WebGLRenderer({ antialias: true })
