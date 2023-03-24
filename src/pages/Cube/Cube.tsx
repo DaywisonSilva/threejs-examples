@@ -1,5 +1,6 @@
 import { memo, useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const Cube = () => {
   const containerCube = useRef<HTMLDivElement>(null)
@@ -16,12 +17,14 @@ const Cube = () => {
     // render scene
     const renderer = new THREE.WebGLRenderer()
 
+    const controls = new OrbitControls(camera, renderer.domElement)
+
     renderer.setSize(window.innerWidth, window.innerHeight)
     containerCube.current?.appendChild(renderer.domElement)
 
     // create element
     const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+    const material = new THREE.MeshBasicMaterial({ color: 0xffffff })
     const cube = new THREE.Mesh(geometry, material)
 
     // add to scene the element created
